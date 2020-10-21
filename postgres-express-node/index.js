@@ -103,6 +103,7 @@ async function init() {
    */
   try {
     const secret = "my supper secret";
+    /*
     let message = "Authenticate this message.";
 
     let hmac = crypto.createHmac("sha256", secret); // ! Message authentication code
@@ -110,11 +111,11 @@ async function init() {
     console.table([
       { message, "message digest/authentication tag": authTag.toString("hex") },
     ]);
-
+*/
     // * ===============================
     // * Example: Authenticating a file
     // *--------------------------------
-    /*
+    
     const CREATE_TAG = false;
 
     if (CREATE_TAG) {
@@ -145,7 +146,7 @@ async function init() {
           } authentic.`
         );
       });
-    }*/
+    }
   } catch (err) {
     console.log(err.message);
   }
