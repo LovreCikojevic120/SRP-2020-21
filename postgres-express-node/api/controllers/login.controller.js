@@ -10,7 +10,7 @@ exports.login = async (req, res) => {
     const user = await loginServiceInstance.getUser({ username });
     
     if(user && user.password === password){
-      return res.json({ message: "Login succesful" });
+      return res.json({ message: "Login succesful" , token:"auth_token"});
     }
     return res.status(401).json({ error: "Not authorized" });
 
