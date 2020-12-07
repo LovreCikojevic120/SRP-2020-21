@@ -43,7 +43,7 @@ module.exports = ({ app, HttpLogger: logger }) => {
     }
     res.status(err.status || 500).json({
       error: {
-        message: err.message,
+        message: err.message || "Internal server error",
       },
     });
   });
