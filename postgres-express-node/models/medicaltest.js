@@ -1,3 +1,4 @@
+  
 "use strict";
 const { Model } = require("sequelize");
 const { fieldEncryption } = require("../services/sequelize-field-encrypt");
