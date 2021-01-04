@@ -33,10 +33,10 @@ class UserService {
 
   async createUser(userDTO) {
     try {
-      this.logger.info(`Hashing password for user ${userDTO.username}`);
+      this.logger.info(`Hashing password for user "${userDTO.username}"`);
       const hashedPassword = await bcrypt.hash(userDTO.password, config.bcrypt.SALT_ROUNDS);
 
-      const user = await this.userModel.create({...userDTO, password: hashedPassword});
+      const user = await this.userModel.create({...userDTO, password: hashedPassword,});
       return user;
     } catch (err) {
       this.logger.error("Error %o", err);
@@ -60,7 +60,7 @@ class UserService {
         _userDTO.password=hashedPassword;
       }
 
-      user = user.update(_userDTO);
+      user = await user.update(_userDTO);
       return user;
     } catch (err) {
       this.logger.error("Error %o", err);
