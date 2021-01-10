@@ -39,8 +39,8 @@ class LoginService {
         return {user, token};
       }
 
-      this.logger.error("nvalid password ");
-      throw new Error("Auten failed!");
+      this.logger.error("Invalid password ");
+      throw new Error("Autentication failed!");
     }
 
     generateToken(payload){
